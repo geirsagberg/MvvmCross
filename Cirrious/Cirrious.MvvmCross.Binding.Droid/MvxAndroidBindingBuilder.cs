@@ -76,12 +76,15 @@ namespace Cirrious.MvvmCross.Binding.Droid
             return new MvxAppResourceTypeFinder();
         }
 
+
         protected override void FillTargetFactories(IMvxTargetBindingFactoryRegistry registry)
         {
             base.FillTargetFactories(registry);
 
             registry.RegisterCustomBindingFactory<TextView>("Text",
                                                             textView => new MvxTextViewTextTargetBinding(textView));
+            registry.RegisterCustomBindingFactory<TextView>("TextColor",
+                                                            textView => new MvxTextViewTextColorBinding(textView));
             registry.RegisterPropertyInfoBindingFactory((typeof(MvxAutoCompleteTextViewPartialTextTargetBinding)),
                                                     typeof(AutoCompleteTextView), "PartialText");
             registry.RegisterPropertyInfoBindingFactory(
@@ -96,6 +99,8 @@ namespace Cirrious.MvvmCross.Binding.Droid
                                                             view => new MvxViewVisibleBinding(view));
             registry.RegisterCustomBindingFactory<View>("Hidden",
                                                             view => new MvxViewHiddenBinding(view));
+            registry.RegisterCustomBindingFactory<View>("BackgroundColor",
+                                                            view => new MvxViewBackgroundColorBinding(view));
             registry.RegisterCustomBindingFactory<ImageView>("Bitmap",
                                                             imageView => new MvxImageViewBitmapTargetBinding(imageView));
             registry.RegisterCustomBindingFactory<ImageView>("DrawableId",
@@ -103,7 +108,7 @@ namespace Cirrious.MvvmCross.Binding.Droid
             registry.RegisterCustomBindingFactory<ImageView>("DrawableName",
                                                             imageView => new MvxImageViewDrawableNameTargetBinding(imageView));
             registry.RegisterCustomBindingFactory<ImageView>("AssetImagePath",
-                                                             imageView => new MvxImageViewImageTargetBinding(imageView)); 
+                                                             imageView => new MvxImageViewImageTargetBinding(imageView));
             registry.RegisterCustomBindingFactory<MvxSpinner>("SelectedItem",
                                                                              spinner =>
                                                                              new MvxSpinnerSelectedItemBinding(
