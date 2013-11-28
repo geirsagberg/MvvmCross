@@ -44,6 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Target\MvxViewBackgroundColorBinding.cs" />
     <Compile Include="Binders\IMvxAndroidViewBinder.cs" />
     <Compile Include="Binders\IMvxAndroidViewBinderFactory.cs" />
     <Compile Include="Binders\IMvxAndroidViewFactory.cs" />
@@ -53,6 +54,7 @@
     <Compile Include="Binders\MvxAndroidViewBinderFactory.cs" />
     <Compile Include="Binders\MvxAndroidViewFactory.cs" />
     <Compile Include="Binders\MvxLayoutInflatorFactoryFactory.cs" />
+    <Compile Include="Target\MvxTextViewTextColorBinding.cs" />
     <Compile Include="Binders\ViewTypeResolvers\IMvxAxmlNameViewTypeResolver.cs" />
     <Compile Include="Binders\ViewTypeResolvers\IMvxNamespaceListViewTypeResolver.cs" />
     <Compile Include="Binders\ViewTypeResolvers\MvxCachedViewTypeResolver.cs" />
